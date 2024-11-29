@@ -30,6 +30,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Main"/>
                         <constraints>
+                            <constraint firstItem="YC2-c4-no8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="KKB-R9-BaP"/>
                             <constraint firstItem="YC2-c4-no8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r0Y-u1-fFC"/>
                             <constraint firstItem="YC2-c4-no8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xdd-EB-YgW"/>
                         </constraints>

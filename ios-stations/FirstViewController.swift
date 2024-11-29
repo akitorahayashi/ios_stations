@@ -13,10 +13,12 @@ class FirstViewController: UIViewController {
     }
     @IBOutlet weak var clickButton: UIButton!
     
-    @IBAction func clickAction(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.random
+    @IBAction func presentSecondViewController(_ sender: UIButton) {
+        let secondViewController = SecondViewController(url: "")
+
+        // presentメソッドでSecondViewControllerを表示
+        present(secondViewController, animated: true, completion: nil)
     }
-    
 }
 
 extension FirstViewController: UITableViewDataSource {

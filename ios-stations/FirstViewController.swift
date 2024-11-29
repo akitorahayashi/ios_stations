@@ -14,7 +14,7 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var clickButton: UIButton!
     
     @IBAction func presentSecondViewController(_ sender: UIButton) {
-        let secondViewController = SecondViewController(url: "")
+        let secondViewController = SecondViewController(url: "https://techbowl.co.jp/")
 
         // presentメソッドでSecondViewControllerを表示
         present(secondViewController, animated: true, completion: nil)

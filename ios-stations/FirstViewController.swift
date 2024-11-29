@@ -11,6 +11,12 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    @IBOutlet weak var clickButton: UIButton!
+    
+    @IBAction func clickAction(_ sender: UIButton) {
+        sender.backgroundColor = UIColor.random
+    }
+    
 }
 
 extension FirstViewController: UITableViewDataSource {

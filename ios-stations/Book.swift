@@ -4,9 +4,10 @@
 //
 
 struct Book: Decodable {
-    let id: String
-    let title: String
-    let author: String
-    let description: String
-    let imageUrl: String?
+    var id: String
+    var title: String
+    var url: String
+    var detail: String
+    var review: String     
+    var reviewer: String
 }

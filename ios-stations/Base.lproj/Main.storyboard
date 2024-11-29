@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YC2-c4-no8">
-                                <rect key="frame" x="157" y="444.5" width="100" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YC2-c4-no8">
+                                <rect key="frame" x="157" y="437.5" width="100" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="4SW-QQ-pr5"/>
                                 </constraints>
@@ -30,8 +30,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Main"/>
                         <constraints>
-                            <constraint firstItem="YC2-c4-no8" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cJy-jz-lXc"/>
-                            <constraint firstItem="YC2-c4-no8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cmc-az-NIa"/>
+                            <constraint firstItem="YC2-c4-no8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r0Y-u1-fFC"/>
+                            <constraint firstItem="YC2-c4-no8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xdd-EB-YgW"/>
                         </constraints>
                     </view>
                 </viewController>

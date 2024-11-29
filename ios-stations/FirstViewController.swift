@@ -6,12 +6,24 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-
+    
     var books: [Book]?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = UIColor.Theme.main
+        let label = UILabel()
+        label.text = "Hello, World"
+        label.textAlignment = .center
+        
+        // Auto Layoutを有効にする
+        label.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(label)
+        
+        // Auto Layout制約を追加
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor), // 横方向の中央
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)  // 縦方向の中央
+        ])
     }
 }
 

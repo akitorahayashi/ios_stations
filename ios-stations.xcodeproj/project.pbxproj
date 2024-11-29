@@ -44,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		1B5E73462CF94F31007C1709 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B5E734A2CF95602007C1709 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		617F70BD29C2BD4B00B7AFFE /* testResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = testResources; sourceTree = "<group>"; };
 		BE24513D266FBEE00038AD81 /* ios-stations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-stations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE245140266FBEE00038AD81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -349,6 +350,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BE245147266FBEE00038AD81 /* Base */,
+				1B5E734A2CF95602007C1709 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

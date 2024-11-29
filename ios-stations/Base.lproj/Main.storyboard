@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YC2-c4-no8">
-                                <rect key="frame" x="157" y="437.5" width="100" height="21"/>
+                                <rect key="frame" x="20" y="437.5" width="374" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="4SW-QQ-pr5"/>
                                 </constraints>
@@ -30,6 +30,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Main"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YC2-c4-no8" secondAttribute="trailing" constant="20" id="1uq-VE-kz1"/>
+                            <constraint firstItem="YC2-c4-no8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FXH-u3-Y1w"/>
                             <constraint firstItem="YC2-c4-no8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="KKB-R9-BaP"/>
                             <constraint firstItem="YC2-c4-no8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r0Y-u1-fFC"/>
                             <constraint firstItem="YC2-c4-no8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xdd-EB-YgW"/>

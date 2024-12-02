@@ -17,7 +17,7 @@ class FirstViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "BookCell")
+        //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "BookCell")
         
         fetchBooks()
     }
@@ -45,11 +45,14 @@ extension FirstViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath) as? BookCell else {
+            return UITableViewCell()
+        }
         
         if let book = books?[indexPath.row] {
-            cell.textLabel?.text = book.title
-            cell.detailTextLabel?.text = book.detail
+            cell.titleLabel.text = book.title
+            cell.detailLabel.text = book.detail
+            cell.element = book
         }
         
         return cell
@@ -62,6 +65,7 @@ extension FirstViewController: UITableViewDelegate {
             performSegue(withIdentifier: "showDetail", sender: book.url)
         }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail",
            let destinationVC = segue.destination as? SecondViewController,
@@ -70,4 +74,3 @@ extension FirstViewController: UITableViewDelegate {
         }
     }
 }
-

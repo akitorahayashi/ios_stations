@@ -87,6 +87,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="clickButton" destination="mdB-Wr-y3l" id="6tu-Pz-Mts"/>
                         <outlet property="tableView" destination="YQ0-eS-11b" id="iIL-zF-XKV"/>
                         <segue destination="dd5-Xc-0ej" kind="show" identifier="showDetail" id="eno-T5-e8s"/>
                     </connections>

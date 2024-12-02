@@ -7,6 +7,7 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
+    @IBOutlet weak var clickButton: UIButton!
     var books: [Book] = []
     
     @IBOutlet weak var tableView: UITableView!

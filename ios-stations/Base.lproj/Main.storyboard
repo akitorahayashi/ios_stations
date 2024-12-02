@@ -48,6 +48,10 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailLabel" destination="KCD-OM-eyG" id="p0E-7h-rv7"/>
+                                            <outlet property="titleLabel" destination="KCD-OM-eyG" id="neb-K1-gDS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -63,11 +67,28 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="YQ0-eS-11b" id="iIL-zF-XKV"/>
+                        <segue destination="dd5-Xc-0ej" kind="show" identifier="showDetail" id="eno-T5-e8s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="102.45535714285714"/>
+            <point key="canvasLocation" x="204" y="80"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="7We-89-yeq">
+            <objects>
+                <viewController id="dd5-Xc-0ej" customClass="SecondViewController" customModule="ios_stations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wbO-iG-fad">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="rdD-kb-jQg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iT8-g8-mYa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S7H-Oo-EDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128" y="102"/>
         </scene>
     </scenes>
     <resources>

@@ -48,8 +48,8 @@ extension FirstViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath)
         
         if let book = books?[indexPath.row] {
-//            cell.textLabel?.text = book.title
-//            cell.detailTextLabel?.text = book.author
+            cell.textLabel?.text = book.title
+            cell.detailTextLabel?.text = book.detail
         }
         
         return cell
@@ -58,6 +58,16 @@ extension FirstViewController: UITableViewDataSource {
 
 extension FirstViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let book = books?[indexPath.row] {
+            performSegue(withIdentifier: "showDetail", sender: book.url)
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail",
+           let destinationVC = segue.destination as? SecondViewController,
+           let url = sender as? String {
+            destinationVC.url = url
+        }
     }
 }
 

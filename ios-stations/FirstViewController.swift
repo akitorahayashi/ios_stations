@@ -24,19 +24,15 @@ class FirstViewController: UIViewController {
     }
     
     private func configureRefreshControl() {
-        refreshControl.addTarget(self, action: #selector(refreshBooks), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(fetchBooks), for: .valueChanged)
         tableView.refreshControl = refreshControl
     }
     
-    @objc private func refreshBooks() {
-        fetchBooks(offset: 0)
-    }
-    
     @IBAction func fetchBooks(_ sender: UIButton) {
-        fetchBooks(offset: books.count)
+        fetchBookfromAPI(offset: books.count)
     }
     
-    private func fetchBooks(offset: Int) {
+    private func fetchBookfromAPI(offset: Int) {
         BookAPIClient.shared.fetchBooks(offset: offset) { [weak self] (fetchedBooks) in
             guard let self = self else { return }
             

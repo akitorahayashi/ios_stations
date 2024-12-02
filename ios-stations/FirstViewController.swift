@@ -10,7 +10,7 @@ class FirstViewController: UIViewController {
     var books: [Book] = []
     
     @IBOutlet weak var tableView: UITableView!
-    private let refreshControl = UIRefreshControl() // リフレッシュコントロール
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,46 +18,38 @@ class FirstViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        // RefreshControl を設定
-        setupRefreshControl()
+        // UIRefreshControl の設定
+        configureRefreshControl()
     }
     
-    private func setupRefreshControl() {
+    private func configureRefreshControl() {
         refreshControl.addTarget(self, action: #selector(refreshBooks), for: .valueChanged)
         tableView.refreshControl = refreshControl
     }
     
-    @IBAction func fetchBooks(_ sender: UIButton) {
-        fetchBooks(offset: books.count, append: true)
-    }
-    
     @objc private func refreshBooks() {
-        fetchBooks(offset: 0, append: false)
+        fetchBooks(offset: 0)
     }
     
-    private func fetchBooks(offset: Int, append: Bool) {
+    @IBAction func fetchBooks(_ sender: UIButton) {
+        fetchBooks(offset: books.count)
+    }
+    
+    private func fetchBooks(offset: Int) {
         BookAPIClient.shared.fetchBooks(offset: offset) { [weak self] (fetchedBooks) in
             guard let self = self else { return }
             
             if let fetchedBooks = fetchedBooks {
-                // データの更新
-                if append {
-                    self.books.append(contentsOf: fetchedBooks)
-                } else {
-                    self.books = fetchedBooks // 既存データを上書き
-                }
+                self.books = fetchedBooks
+                
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
-                    if !append {
-                        self.refreshControl.endRefreshing() // リフレッシュ終了
-                    }
+                    self.refreshControl.endRefreshing() // リフレッシュ終了
                 }
             } else {
                 print("Failed to fetch books")
-                if !append {
-                    DispatchQueue.main.async {
-                        self.refreshControl.endRefreshing() // リフレッシュ終了
-                    }
+                DispatchQueue.main.async {
+                    self.refreshControl.endRefreshing() // エラー時もリフレッシュ終了
                 }
             }
         }

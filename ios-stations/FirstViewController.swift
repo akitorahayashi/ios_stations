@@ -24,29 +24,38 @@ class FirstViewController: UIViewController {
     }
     
     private func configureRefreshControl() {
-        refreshControl.addTarget(self, action: #selector(fetchBooks), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(refreshBooks), for: .valueChanged)
         tableView.refreshControl = refreshControl
     }
     
-    @IBAction func fetchBooks(_ sender: UIButton) {
-        fetchBookfromAPI(offset: books.count)
+    @objc private func refreshBooks() {
+        fetchBookfromAPI(offset: 0, shouldAdd: false)
     }
     
-    private func fetchBookfromAPI(offset: Int) {
+    @IBAction func fetchBooks(_ sender: UIButton) {
+        fetchBookfromAPI(offset: books.count, shouldAdd: true)
+    }
+    
+    private func fetchBookfromAPI(offset: Int, shouldAdd: Bool) {
         BookAPIClient.shared.fetchBooks(offset: offset) { [weak self] (fetchedBooks) in
             guard let self = self else { return }
             
             if let fetchedBooks = fetchedBooks {
-                self.books = fetchedBooks
+                if shouldAdd {
+                    self.books.append(contentsOf: fetchedBooks)
+                } else {
+                    self.books = fetchedBooks
+                }
+                
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
-                    self.refreshControl.endRefreshing() // リフレッシュ終了
+                    self.refreshControl.endRefreshing()
                 }
             } else {
                 print("Failed to fetch books")
                 DispatchQueue.main.async {
-                    self.refreshControl.endRefreshing() // エラー時もリフレッシュ終了
+                    self.refreshControl.endRefreshing()
                 }
             }
         }

@@ -372,13 +372,13 @@ class ios_stationsTests: XCTestCase {
         let expectation = self.expectation(description: "mock request")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(15)) {
-            XCTAssertTrue(vc.books?.count == 10, "bookは読み込まれていません")
+            XCTAssertTrue(vc.books.count == 10, "bookは読み込まれていません")
             button.tap()
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(15)) {
-                XCTAssertTrue(vc.books?.count == 20, "bookのデータは追加されていません")
+                XCTAssertTrue(vc.books.count == 20, "bookのデータは追加されていません")
                 refreshControl.sendActions(for: .valueChanged)
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(15)) {
-                    XCTAssertTrue(vc.books?.count == 10, "pullrefreshでbookが最初のデータにリセットされていません")
+                    XCTAssertTrue(vc.books.count == 10, "pullrefreshでbookが最初のデータにリセットされていません")
                     expectation.fulfill()
                 }
             }

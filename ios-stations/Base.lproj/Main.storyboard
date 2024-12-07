@@ -60,10 +60,8 @@
                                 <rect key="frame" x="107" y="788" width="200" height="44"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="7Ue-XE-dXc"/>
                                     <constraint firstAttribute="width" constant="200" id="N4m-xT-zPV"/>
                                     <constraint firstAttribute="height" constant="44" id="Ymq-D7-58m"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="nb9-kN-9jw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
